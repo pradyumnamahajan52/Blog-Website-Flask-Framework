@@ -8,6 +8,7 @@
 #python virtual env
 
 /test_env
+/Templates Sample
 
 # testing
 /coverage
