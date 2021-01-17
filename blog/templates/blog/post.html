@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} BLog - Post{% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+<header class="masthead" style="background-image:url('/static/Blog_image/{{blog.image}}');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="post-heading">
+                    <h1>{{blog.title}}</h1>
+                    <h2 class="subheading">{{blog.tagline}}</h2><span class="meta">Posted
+                        by&nbsp;<a href="#">{{blog.users.first_name}} {{blog.users.last_name}}</a>&nbsp;on
+                        {{blog.created_at}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <p>{{blog.content}}</p>
+            </div>
+        </div>
+    </div>
+</article>
+<hr />
+{% endblock %}
+
+{% block footer %}{% endblock footer %}

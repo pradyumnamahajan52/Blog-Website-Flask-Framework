@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} BLog - Home{% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<header class="masthead" style="background-image:url('/static/image/home-bg.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1><span class="subheading">A Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-lg-8">
+            {% for blog in blogs %}
+            <div class="post-preview">
+                <a href="/blog/{{blog.id}}">
+                    <h2 class="post-title">{{blog.title}}</h2>
+                    <h3 class="post-subtitle">{{blog.tagline}}</h3>
+                </a>
+                <p class="post-meta">Posted by&nbsp;<a href="#">{{blog.users.first_name}} {{blog.users.last_name}} on
+                        {{blog.created_at}}</a></p>
+            </div>
+            <hr>
+            {% endfor %}
+            <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older
+                    Posts&nbsp;⇒</button></div>
+        </div>
+    </div>
+</div>
+<hr />
+{% endblock %}
+
+{% block footer %}{% endblock footer %}
